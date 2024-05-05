@@ -85,7 +85,17 @@ The staging area in Git holds data for the next commit, which is a snapshot of t
   git commit -a
   ```
 
-## 5. Viewing the changes
+## 5. Push, Pull
+
+- Pull
+- Push
+  ```
+  git push
+  ```
+
+
+
+## 6. Viewing the changes
 
   `git diff` is used for knowing differences between two versions of a file.
   - show unstaged changes
@@ -102,7 +112,7 @@ The staging area in Git holds data for the next commit, which is a snapshot of t
     ```
     
 
-## 6. Browsing History
+## 7. Browsing History
 
   `HEAD` is used for latest commit. we can also use a `~NUMBER` after the `HEAD` to points previous commits refferencing by HEAD. like `HEAD~3` wich points to 3 commits before. another way is to point a commit with its unique ID.
   - Showing commit history: use `space` to go to next page and `q` to quit.
@@ -130,7 +140,7 @@ The staging area in Git holds data for the next commit, which is a snapshot of t
     example: `git show 94954abda49de`
 
 
-## 7. Restoring
+## 8. Restoring
 - Discarding local changes
   1. Copies old file in stage area (index) to current file in working directory
      ```
