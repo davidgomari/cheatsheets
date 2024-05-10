@@ -29,6 +29,7 @@ pip list --local
 
 # Virtual evironments
 
+## 1 VENV
 for windows we use `py` but in LINUX/MAC we should use `python3`.
 
 **1. Create a virtual environment:**
@@ -70,6 +71,20 @@ source 'NAME'/bin/activate
 deactivate
 ```
 
+## 2 Conda
+
+works just in CMD.
+
+```
+# environments list
+conda info --envs
+
+# Activating an environment
+activate NAME
+
+
+
+```
 
 
 # Python Libraries

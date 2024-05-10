@@ -168,13 +168,13 @@ The staging area in Git holds data for the next commit, which is a snapshot of t
 ## Other
 - Git ignore
   1. add a folder in the directory to `.gitignore`
-    ```
-    echo foldername/ >> .gitignore
-    ```
+      ```
+      echo foldername/ >> .gitignore
+      ```
   2. all text files should be ignored
-     ```
-     echo "*.txt" >> .gitignore
-     ```
+      ```
+      echo "*.txt" >> .gitignore
+      ```
 
 ## Setup
 - Installing Git
