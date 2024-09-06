@@ -25,17 +25,19 @@ A data frame is like a Python dictionary. each `key` represents a column that ha
   "last": ['L1', 'L2', 'L3'],
   "email": ['e1@gm.com', 'e2@em.com', 'e3@pm.com']
 }`
+
 | Usage | Command | Description |
 |:-----:|:-------:|:-----------:|
 | Create DF with Dictionary | `df = pd.DataFrame(dict)` | `dict` is a python dictionary |
-
+| Remove missing values | `df.drpna(axis=0, how=any, subset=None, inplace=False)` | `axis`: Determine if rows or columns which contain missing values to remove (0=`index` or 1=`columns`). `how`: determines remove condition, if {`any`, `all`} of the row/column is NoN then we remove it. `subset`: list of columns label (e.g. if you are dropping rows these would be a list of columns to include). |
+| Drop Duplicates | `df.drop_duplicates(subset=None, keep='first', inplace=False)` | `subset`: {column label or sequence of labels, optional} Only consider certain columns for identifying duplicates, by default use all of the columns. `keep`: {`first`, `last`, `False`: Drop all duplicates.}, Determines which duplicates (if any) to keep. |
+| Fill null values | `df.fillna(value, inplace=False)` | `value`: {scalar, dict, Series, or DataFrame}. Value to use to fill holes (e.g. 0), alternately a dict/Series/DataFrame of values specifying which value to use for each index (for a Series) or column (for a DataFrame). Values not in the dict/Series/DataFrame will not be filled. This value cannot be a list. |
 
 ## Data Series
 When we get values of a single column/row, pandas would call it a series. so if the output has multiple columns then it's a new filtered Data Frame.
 | Usage | Command | Description |
 |:-----:|:-------:|:-----------:|
-| Counting Values | `df[column_name].value_counts()` | counts the number of occurrences of each different possible value for the column `column_name` |
-
+| Counting Values | `df[column_name].value_counts(normalize=False)` | counts the number of occurrences of each different possible value for the column `column_name`. With `normalize` set to `True`, returns the relative frequency by dividing all values by the sum of values. |
 
 ## Accessing
 In `iloc` we are searching with the **integer** location. but in `loc` we're searching by **labels/strings**.

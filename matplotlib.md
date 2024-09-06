@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 | Set The Title | `plt.title("Title")` |
 | Set the x-axis label | `plt.xlabel('Label')` |
 | Set the y-axis label | `plt.ylabel('Label')` |
+| Set the axis range | `plt.axis([x_start, x_end, y_start, y_end])` |
 | Show the Legend | `plt.legend()` |
 | Show the plt | `plt.show()` |
 
