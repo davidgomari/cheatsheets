@@ -80,11 +80,11 @@ from tf.keras.layers import Input, Dense, Normalization, Activation
 
 | Activation | Plot | Range | ACT | Formula | Description |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| Sigmoid (Logistic) | ![](120px-Activation_logistic.png) | (0, 1) | `'sigmoid'` | $ g(z) = {1 \over 1 + e^{-z}} $ | Binary Classification |
-| SoftMax | ![](120px-Activation_logistic.png) | (0, 1) | `'softmax'` | $g(z)_i = {e^{z_i} \over \sum_{j=1}^{K} e^{z_j}}$ | Multi Classification |
-| Linear | ![](120px-Activation_identity.png) | (-inf, inf) | `'linear'` | $ g(z) = z $ | Regression |
-| ReLU | ![](120px-Activation_ReLU.png) | (0, inf) | `'relu'` |  $ g(z) = max(0, z) $ | Positive Regression |
-| LeakyReLU | ![](120px-Activation_LeakyReLU.png) | (-inf, inf) | `'leakyrelu'` | $ g(z) = max(\alpha z, z)$ | 
+| Sigmoid (Logistic) | ![](img/120px-Activation_logistic.png) | (0, 1) | `'sigmoid'` | $ g(z) = {1 \over 1 + e^{-z}} $ | Binary Classification |
+| SoftMax | ![](img/120px-Activation_logistic.png) | (0, 1) | `'softmax'` | $g(z)_i = {e^{z_i} \over \sum_{j=1}^{K} e^{z_j}}$ | Multi Classification |
+| Linear | ![](img/120px-Activation_identity.png) | (-inf, inf) | `'linear'` | $ g(z) = z $ | Regression |
+| ReLU | ![](img/120px-Activation_ReLU.png) | (0, inf) | `'relu'` |  $ g(z) = max(0, z) $ | Positive Regression |
+| LeakyReLU | ![](img/120px-Activation_LeakyReLU.png) | (-inf, inf) | `'leakyrelu'` | $ g(z) = max(\alpha z, z)$ | 
 
 
 
@@ -115,8 +115,8 @@ from tf.keras.losses import MeanSquaredError, BinaryCrossentropy
 | Loss Function Name | Tensorflow code | Formula | Category |
 |:-:|:-:|:-:|:-:|
 | Mean Squared Error (MSE) | `MeanSquaredError`, `mse` | $ {1 \over 2} \times{(y - f(x)})^ 2$ | Regression |
-| Logistic Loss | `BinaryCrossentropy` | ![](Sigmoid_Loss.jpg) | Binary Classification |
-| SoftMax Loss | `SparseCategoricalCrossentropy` | ![](SCCE_Loss.jpg) | Multiclassification |
+| Logistic Loss | `BinaryCrossentropy` | ![](img/Sigmoid_Loss.jpg) | Binary Classification |
+| SoftMax Loss | `SparseCategoricalCrossentropy` | ![](img/SCCE_Loss.jpg) | Multiclassification |
 
 **example:** we use `from_logits=True` for more computation accuracy. with this change, we need to set the activation function of last layer to `linear`.
 ```python
