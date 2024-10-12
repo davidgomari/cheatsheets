@@ -52,5 +52,8 @@ plt.scatter(x, y, marker, c, **kwargs)
 
 `c` is color it can be `r` or `b` and...
 
-
+### Histogram
+```python
+plt.hist(x, bins=20, color='r')
+```
 

@@ -93,12 +93,22 @@ Using Conditionals to Filter Rows and Columns
 Updating Rows and Columns - Modifying Data Within DataFrames
 [click](https://www.youtube.com/watch?v=DCDe29sIKcE&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=5)
 
+## Data Engineering
 
+### 1 One-hot Encoding Categorical Features
 
+One-hot encoding aims to transform a categorical variable with `n` possible outputs into `n` binary variables.
 
+**data:** DataFrame to be used
 
+**prefix:** A list with prefixes. String to append DataFrame column names.
 
+**columns:** Column names in the DataFrame to be encoded. If `columns` is `None` then all the columns with object, string, or category dtype will be converted. `prefix` and `columns` must have the same length.
 
+```python
+# This will replace the columns with the one-hot encoded ones and keep the columns outside 'columns' argument as it is.
+df = pd.get_dummies(data = df, prefix = cat_variables, columns = cat_variables)
+```
 
-
+### 2 
 
