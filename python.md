@@ -2,6 +2,12 @@
 
 # Managing packages
 ```bash
+# where is the current pip? it should point to current active env
+where pip
+
+# checking python version
+python --version
+
 # To install a package
 pip install `package-name`
 
@@ -72,18 +78,43 @@ deactivate
 ```
 
 ## 2 Conda
-
 works just in CMD.
+### Create a New Environment
+Specifying the python version in `conda create` will automatically include the default pip for that Python version and it is separate from the pip of base environment.
+```python
+# approach 1: specifying the name
+conda create NAME python=python_version
 
+# approach 2: specifying the path
+# channels: free, conda-forge
+conda --prefix "/path/to/custom/env" python=python_version --channel free
+
+# approach 3: clone an existing environment
+conda create --name NEW_ENV_NAME --clone BASE_ENV_NAME
 ```
+
+### Working with Envs 
+```python
 # environments list
 conda info --envs
 
 # Activating an environment
 activate NAME
 
+# Deactivate an env
+conda deactivate NAME
+```
+### Checking wheather the cuda is installed?
+```python
+# Install CUDA Packages
+conda install -c conda-forge cudatoolkit=11.8 cudnn
+conda env config vars set CUDA_HOME=$CONDA_PREFIX
 
-
+# Verifying CUDA Installation
+# Run the following command to see if CUDA packages are present:
+conda list cudatoolkit
+# or
+nvcc --version
 ```
 
 

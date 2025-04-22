@@ -39,7 +39,7 @@
   ```
   example: `git restore --staged file1.txt main.py`
 - Removing file
-  1. Removes from working directory and staging area 
+  1. Removes from working directory and staging area
     ```
     git rm file1.js 
     ```

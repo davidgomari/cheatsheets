@@ -56,7 +56,10 @@ print(torch.__version__)
 | **View `STORAGE`**  | Reshape tensor `a` and returns a new tensor. **Flatten(n,):** `a.view(-1)`. **Row Vector(1,n):** `a.view(1,-1)`. | `a.view(new_shape)` |
 | **Transpose `STORAGE`** | return transposed tensor | `a.t()` |
 | **Move new tensor** | These methods create a new clone tensor in another device based on tensor `a`. | `a.cuda()` `a.cpu()` |
-| **Repeat** | Repeats this tensor along the specified dimensions. | `arepeat(sizes*)` |
+| **Repeat** | Repeats this tensor along the specified dimensions. | `a.repeat(sizes*)` |
+| **Chunk `STORAGE`** | Attempts to split a tensor into the specified number of chunks. Each chunk is a view of the input tensor. `chunks` is number of chunks to return. `dim` is dimension along which to split the tensor. for splitting x_train use `dim=0`. | `a.chunk(chunks, dim)` |
+| **Cat** | Concatenates the given sequence of seq tensors in the given dimension. `tensors` (sequence of Tensors) any python sequence of tensors of the same type. `dim` (int, optional) the dimension over which the tensors are concatenated. | `a.cat(tensors, dim=0)` |
+
 
 - **Example:** this code repeat vector `v` in 4 rows and in each row, 2 times.
 
@@ -68,6 +71,7 @@ print(torch.__version__)
   #         [ 1,  2,  1,  2],
   #         [ 1,  2,  1,  2]])
   ```
+
 
 
 ### 5 Slicing `STORAGE`
@@ -156,6 +160,8 @@ col_r2 = a[:, 1:2]  # shape=(n,1)
 | Reduction | **Min** | also can do both `.amin()` and `.argmin()` if argument `dim` is provided. | `x.min()` or `torch.min(x)` |
 | Reduction | **ArgMin** | Returns the indices of the minimum value(s) of the flattened tensor or along a dimension | `x.argmin()` or `torch.argmin(x)` |
 | Reduction | **aMin** | Returns the minimum value of each slice of the `input` tensor in the given dimension(s) `dim`. | `x.amin()` or `torch.amin(x)` |
+| Reduction | **TopK** | Returns the `k` largest elements of the given input tensor along a given dimension. If `dim` is not given, the last dimension of the input is chosen. If `largest` is `False` then the k smallest elements are returned. | `(values, indices) = x.topk(k, dim=None, largest=True)` |
+| Reduction | **Binary Counting** | Count the frequency of each value in an array of non-negative ints. | `x.bincount()` |
 
 - Example:
 
